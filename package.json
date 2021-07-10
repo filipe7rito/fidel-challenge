@@ -1,0 +1,15 @@
+{
+  "name": "fe-techtest-filiperito",
+  "version": "1.0.0",
+  "description": "tech task for Fidel API",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FidelLimited/fe-techtest-filiperito.git"
+  },
+  "author": "Filipe Rito",
+  "license": "ISC",
+  "homepage": "https://github.com/FidelLimited/fe-techtest-filiperito#readme"
+}
