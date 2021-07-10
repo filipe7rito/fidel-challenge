@@ -1,0 +1,13 @@
+
+package.json
+package-lock.json
+node_modules
+README.md
+
+# config files
+/webpack.config.js
+/server.js
+/prettier.config.js
+
+# builds
+build

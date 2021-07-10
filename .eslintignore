@@ -1,0 +1,11 @@
+
+# node modules
+node_modules
+
+# config files
+/webpack.config.js
+/server.js
+/prettier.config.js
+
+# builds
+build

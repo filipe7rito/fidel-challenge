@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": ["airbnb-typescript", "prettier"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+ },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+   	"@typescript-eslint/no-use-before-define": "off"
+  },
+  "settings": {
+		"react": {
+			"version": "detect"
+		}
+	}
+}
