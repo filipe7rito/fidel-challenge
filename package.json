@@ -12,6 +12,12 @@
     "format": "prettier --write '**/*.{js,ts,tsx,yml,css,sass,json,md}'"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "antd": "^4.16.6",
+    "antd-table-infinity": "^1.1.6",
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.6",
+    "dotenv": "^10.0.0",
     "emotion": "^9.2.12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

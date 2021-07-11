@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const dotenv = require('dotenv')
 
 module.exports = (_env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -46,6 +47,7 @@ module.exports = (_env, argv) => {
     },
     plugins: isProduction
       ? [
+          new MiniCssExtractPlugin(),
           new CleanWebpackPlugin(),
           new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'public/index.html'),
@@ -63,6 +65,9 @@ module.exports = (_env, argv) => {
             filename: 'index.html',
             inject: 'body',
           }),
+          new webpack.DefinePlugin({
+            'process.env': JSON.stringify(dotenv.config().parsed)
+          })
         ],
 
     optimization: {
@@ -84,7 +89,7 @@ module.exports = (_env, argv) => {
       ],
     },
 
-    devtool: !isProduction && 'inline-source-map',
+    devtool: !isProduction && 'eval-source-map',
 
     devServer: {
       contentBase: path.join(__dirname, 'build'),

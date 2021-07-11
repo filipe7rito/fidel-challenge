@@ -13,7 +13,8 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error"],
-   	"@typescript-eslint/no-use-before-define": "off"
+   	"@typescript-eslint/no-use-before-define": "off",
+    "import/prefer-default-export": "off"
   },
   "settings": {
 		"react": {
