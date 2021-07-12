@@ -4,7 +4,7 @@ import { Last, Transaction } from './types';
 
 const { REACT_APP_FIDEL_PROGRAM_ID } = process.env;
 
-export async function list({
+export async function fetch({
   last,
   limit,
 }: {

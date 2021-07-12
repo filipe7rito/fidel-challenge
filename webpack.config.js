@@ -58,7 +58,9 @@ module.exports = (_env, argv) => {
         ]
       : [
           new ReactRefreshPlugin(),
-          new webpack.HotModuleReplacementPlugin(),
+          new webpack.HotModuleReplacementPlugin({
+            overlay:false
+          }),
           new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'public/index.html'),
             favicon: 'public/favicon.png',
