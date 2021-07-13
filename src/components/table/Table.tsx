@@ -1,21 +1,25 @@
+import { ReloadOutlined } from '@ant-design/icons';
 import { Spin } from 'antd';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import { css } from 'emotion';
 import React, { useMemo } from 'react';
-import { Column, useTable } from 'react-table';
-import { Transaction } from '../../api/transactionsApi/types';
+import { Column, useTable, UseTableCellProps } from 'react-table';
+import { Scheme, Transaction } from '../../api/transactions-api/types';
+import { MasterCardImage, VisaImage } from '../../images';
 
 export function Table({
   data,
   total,
   loading,
   fetchData,
+  reload,
 }: {
   data: Transaction[];
   total: number;
   loading: boolean;
   fetchData: () => void;
+  reload: () => void;
 }) {
   const columns: Column<Transaction>[] = useMemo(() => {
     return [
@@ -23,10 +27,26 @@ export function Table({
         Header: 'Amount',
         id: 'amount',
         accessor: 'amount',
+        maxWidth: 400,
+        width: 140,
+        /*  width: 200, */
+        Cell: function Cell(options: UseTableCellProps<Transaction>) {
+          const { row } = options;
+          const { original: transaction } = row;
+
+          return (
+            <div>
+              {transaction.currency} <strong>{transaction.amount.toFixed(2)}</strong>
+            </div>
+          );
+        },
       },
       {
         Header: 'Address',
         id: 'address',
+        maxWidth: 400,
+        minWidth: 140,
+        width: 140,
         accessor: (record: Transaction) => {
           return record.location.address;
         },
@@ -34,13 +54,28 @@ export function Table({
       {
         Header: 'Scheme',
         id: 'scheme',
+        maxWidth: 400,
+        minWidth: 140,
+        width: 140,
         accessor: (record: Transaction) => {
           return record.card.scheme;
+        },
+        Cell: function Cell(options: UseTableCellProps<Transaction>) {
+          const { value } = options;
+
+          return (
+            <div /* style={{ textAlign: 'center' }} */>
+              {value === Scheme.VISA ? <VisaImage /> : <MasterCardImage />}
+            </div>
+          );
         },
       },
       {
         Header: 'Card',
         id: 'card',
+        maxWidth: 400,
+        minWidth: 140,
+        width: 140,
         accessor: (record: Transaction) => {
           return record.card.lastNumbers;
         },
@@ -48,12 +83,29 @@ export function Table({
       {
         Header: 'Date(UTC)',
         id: 'datetime',
+        maxWidth: 400,
+        minWidth: 140,
+        width: 140,
         accessor: (record: Transaction) => {
           const { datetime } = record;
 
           dayjs.extend(localizedFormat);
 
           return <>{dayjs(datetime).format('lll')}</>;
+        },
+      },
+      {
+        id: 'reload',
+        width: 30,
+        Header: () => {
+          return (
+            <ReloadOutlined
+              onClick={() => reload()}
+              className={css`
+                cursor: pointer;
+              `}
+            />
+          );
         },
       },
     ];
@@ -72,10 +124,15 @@ export function Table({
         <table>
           <thead>
             {headerGroups.map((headerGroup) => (
-              <tr key={headerGroup.getHeaderGroupProps().key}>
+              <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => {
                   return (
-                    <th className={tableHeaderStyle} key={column.getHeaderProps().key}>
+                    <th
+                      className={tableHeaderStyle}
+                      {...column.getHeaderProps({
+                        style: { minWidth: column.minWidth, width: column.width },
+                      })}
+                    >
                       <div>{column.render('Header')}</div>
                     </th>
                   );
@@ -96,9 +153,20 @@ export function Table({
             {rows.map((row) => {
               prepareRow(row);
               return (
-                <tr key={row.getRowProps().key}>
+                <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => {
-                    return <td key={cell.getCellProps().key}>{cell.render('Cell')}</td>;
+                    return (
+                      <td
+                        {...cell.getCellProps({
+                          style: {
+                            minWidth: cell.column.minWidth,
+                            width: cell.column.width,
+                          },
+                        })}
+                      >
+                        {cell.render('Cell')}
+                      </td>
+                    );
                   })}
                 </tr>
               );
@@ -113,10 +181,10 @@ export function Table({
 
 const wrapperStyle = css`
   overflow-y: hidden;
-  width: 80%;
 
   table thead,
   table tbody tr {
+    display: table;
     display: table;
     width: 100%;
     table-layout: fixed;
@@ -129,9 +197,13 @@ const wrapperStyle = css`
 
   table tbody {
     display: block;
-    min-height: 300px;
-    height: 300px;
+    height: 70vh;
     overflow-y: scroll;
+    border-bottom: 1px solid rgb(235, 236, 240);
+  }
+
+  .ant-spin-nested-loading > div > .ant-spin {
+    position: unset;
   }
 `;
 
@@ -146,7 +218,6 @@ const tableHeaderStyle = css`
 const counterStyle = css`
   font-size: 12px;
   color: rgb(108, 120, 139);
-  border-top: 1px solid rgb(235, 236, 240);
   padding: 10px 0px;
   bottom: 0px;
   background: white;
