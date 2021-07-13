@@ -58,6 +58,14 @@ export function TransactionsList() {
   };
 
   const handleReloadData = () => {
+    setTransactionState({
+      ...transactionsState,
+      data: [],
+      pagination: {
+        ...transactionsState.pagination,
+        last: undefined,
+      },
+    });
     setReloadToken((currentToken) => currentToken + 1);
   };
 
@@ -70,8 +78,8 @@ export function TransactionsList() {
       <h2>Transactions</h2>
       <Table
         data={transactionsState.data}
-        total={transactionsState.pagination.total}
         loading={isLoading}
+        total={transactionsState.pagination.total}
         fetchData={fetchTransactions}
         reload={handleReloadData}
       />
