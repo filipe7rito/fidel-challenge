@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import api from '../../api';
 import { Last, Transaction } from '../../api/transactions-api/types';
 import { Table } from '../table';
+import { TransactionPreview } from '../transaction-preview/TransactionPreview';
 
 type TransactionsState = {
   data: Transaction[];
@@ -17,6 +18,8 @@ type TransactionsState = {
 
 export function TransactionsList() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [reloadToken, setReloadToken] = useState(0);
+  const [selectedTransaction, setSelectedTransaction] = useState<Transaction | null>(null);
   const [transactionsState, setTransactionState] = useState<TransactionsState>({
     data: [],
     pagination: {
@@ -25,8 +28,6 @@ export function TransactionsList() {
       total: 0,
     },
   });
-
-  const [reloadToken, setReloadToken] = useState(0);
 
   const fetchTransactions = async () => {
     const { pageSize, last } = transactionsState.pagination;
@@ -82,6 +83,12 @@ export function TransactionsList() {
         total={transactionsState.pagination.total}
         fetchData={fetchTransactions}
         reload={handleReloadData}
+        onRowSelect={(transaction: Transaction) => setSelectedTransaction(transaction)}
+      />
+
+      <TransactionPreview
+        transaction={selectedTransaction}
+        onClosePreview={() => setSelectedTransaction(null)}
       />
     </div>
   );

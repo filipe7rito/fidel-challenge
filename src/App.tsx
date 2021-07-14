@@ -3,8 +3,6 @@ import { css } from 'emotion';
 import React from 'react';
 import { TransactionsList } from './components/transactions-list';
 
-const Footer = () => <footer className="footer" />;
-
 function App() {
   return (
     <div className={wrapper}>
@@ -17,6 +15,8 @@ function App() {
     </div>
   );
 }
+
+const Footer = () => <footer className="footer" />;
 
 export default App;
 

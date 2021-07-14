@@ -14,12 +14,14 @@ export function Table({
   loading,
   fetchData,
   reload,
+  onRowSelect,
 }: {
   data: Transaction[];
   total: number;
   loading: boolean;
   fetchData: () => void;
   reload: () => void;
+  onRowSelect: (transaction: Transaction) => void;
 }) {
   const columns: Column<Transaction>[] = useMemo(() => {
     return [
@@ -29,7 +31,6 @@ export function Table({
         accessor: 'amount',
         maxWidth: 400,
         width: 140,
-        /*  width: 200, */
         Cell: function Cell(options: UseTableCellProps<Transaction>) {
           const { row } = options;
           const { original: transaction } = row;
@@ -63,11 +64,7 @@ export function Table({
         Cell: function Cell(options: UseTableCellProps<Transaction>) {
           const { value } = options;
 
-          return (
-            <div /* style={{ textAlign: 'center' }} */>
-              {value === Scheme.VISA ? <VisaImage /> : <MasterCardImage />}
-            </div>
-          );
+          return value === Scheme.VISA ? <VisaImage /> : <MasterCardImage />;
         },
       },
       {
@@ -118,6 +115,16 @@ export function Table({
 
   const { headerGroups, rows, prepareRow } = tableInstance;
 
+  const handleScroll = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
+    const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
+
+    const hasReachedBottom = scrollHeight - scrollTop === clientHeight;
+
+    if (hasReachedBottom) {
+      fetchData();
+    }
+  };
+
   return (
     <div className={wrapperStyle}>
       <Spin spinning={loading} tip="Loading...">
@@ -140,20 +147,11 @@ export function Table({
               </tr>
             ))}
           </thead>
-          <tbody
-            onScroll={(e: React.UIEvent<HTMLDivElement, UIEvent>) => {
-              const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
-              const hasReachedBottom = scrollHeight - scrollTop === clientHeight;
-
-              if (hasReachedBottom) {
-                fetchData();
-              }
-            }}
-          >
+          <tbody onScroll={handleScroll}>
             {rows.map((row) => {
               prepareRow(row);
               return (
-                <tr {...row.getRowProps()}>
+                <tr {...row.getRowProps()} onClick={() => onRowSelect(row.original)}>
                   {row.cells.map((cell) => {
                     return (
                       <td
@@ -185,11 +183,11 @@ const wrapperStyle = css`
   table thead,
   table tbody tr {
     display: table;
-    display: table;
     width: 100%;
     table-layout: fixed;
     border-bottom: 1px solid rgb(235, 236, 240);
     min-height: 40px;
+    cursor: pointer;
   }
 
   table th {
@@ -200,6 +198,10 @@ const wrapperStyle = css`
     height: 70vh;
     overflow-y: scroll;
     border-bottom: 1px solid rgb(235, 236, 240);
+
+    tr :hover {
+      background-color: rgb(248, 248, 248);
+    }
   }
 
   .ant-spin-nested-loading > div > .ant-spin {
