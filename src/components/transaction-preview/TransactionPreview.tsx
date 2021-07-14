@@ -37,7 +37,7 @@ export function TransactionPreview({
 
 const drawerWrapper = css`
   .ant-drawer-header {
-    padding: ≈40px;
+    padding: 40px;
     background: rgb(2, 43, 54);
     border-bottom: unset;
     .ant-drawer-title {

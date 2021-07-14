@@ -1,10 +1,10 @@
-import { ReloadOutlined } from '@ant-design/icons';
-import { Spin } from 'antd';
+import { ReloadOutlined, SearchOutlined } from '@ant-design/icons';
+import { Input, Spin } from 'antd';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import { css } from 'emotion';
-import React, { useMemo } from 'react';
-import { Column, useTable, UseTableCellProps } from 'react-table';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Column, useGlobalFilter, useTable, UseTableCellProps } from 'react-table';
 import { Scheme, Transaction } from '../../api/transactions-api/types';
 import { MasterCardImage, VisaImage } from '../../images';
 
@@ -23,6 +23,8 @@ export function Table({
   reload: () => void;
   onRowSelect: (transaction: Transaction) => void;
 }) {
+  const [filter, setFilter] = useState('');
+
   const columns: Column<Transaction>[] = useMemo(() => {
     return [
       {
@@ -108,12 +110,15 @@ export function Table({
     ];
   }, []);
 
-  const tableInstance = useTable({
-    columns,
-    data,
-  });
+  const tableInstance = useTable(
+    {
+      columns,
+      data,
+    },
+    useGlobalFilter,
+  );
 
-  const { headerGroups, rows, prepareRow } = tableInstance;
+  const { headerGroups, rows, prepareRow, setGlobalFilter } = tableInstance;
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
     const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
@@ -125,8 +130,21 @@ export function Table({
     }
   };
 
+  useEffect(() => {
+    setGlobalFilter(filter);
+  }, [filter, setGlobalFilter, data]);
+
   return (
     <div className={wrapperStyle}>
+      <Input
+        className={searchStyle}
+        value={filter}
+        placeholder="Filter table results"
+        allowClear
+        prefix={<SearchOutlined />}
+        onChange={(e) => setFilter(e.target.value)}
+      />
+
       <Spin spinning={loading} tip="Loading...">
         <table>
           <thead>
@@ -187,10 +205,6 @@ const wrapperStyle = css`
     table-layout: fixed;
     border-bottom: 1px solid rgb(235, 236, 240);
     min-height: 40px;
-    cursor: pointer;
-  }
-
-  table th {
   }
 
   table tbody {
@@ -198,6 +212,7 @@ const wrapperStyle = css`
     height: 70vh;
     overflow-y: scroll;
     border-bottom: 1px solid rgb(235, 236, 240);
+    cursor: pointer;
 
     tr :hover {
       background-color: rgb(248, 248, 248);
@@ -223,4 +238,9 @@ const counterStyle = css`
   padding: 10px 0px;
   bottom: 0px;
   background: white;
+`;
+
+const searchStyle = css`
+  width: 280px;
+  margin-bottom: 6px;
 `;
