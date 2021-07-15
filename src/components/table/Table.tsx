@@ -31,8 +31,6 @@ export function Table({
         Header: 'Amount',
         id: 'amount',
         accessor: 'amount',
-        maxWidth: 400,
-        width: 140,
         Cell: function Cell(options: UseTableCellProps<Transaction>) {
           const { row } = options;
           const { original: transaction } = row;
@@ -47,9 +45,6 @@ export function Table({
       {
         Header: 'Address',
         id: 'address',
-        maxWidth: 400,
-        minWidth: 140,
-        width: 140,
         accessor: (record: Transaction) => {
           return record.location.address;
         },
@@ -57,9 +52,6 @@ export function Table({
       {
         Header: 'Scheme',
         id: 'scheme',
-        maxWidth: 400,
-        minWidth: 140,
-        width: 140,
         accessor: (record: Transaction) => {
           return record.card.scheme;
         },
@@ -72,9 +64,6 @@ export function Table({
       {
         Header: 'Card',
         id: 'card',
-        maxWidth: 400,
-        minWidth: 140,
-        width: 140,
         accessor: (record: Transaction) => {
           return record.card.lastNumbers;
         },
@@ -82,9 +71,6 @@ export function Table({
       {
         Header: 'Date(UTC)',
         id: 'datetime',
-        maxWidth: 400,
-        minWidth: 140,
-        width: 140,
         accessor: (record: Transaction) => {
           const { datetime } = record;
 
@@ -118,7 +104,7 @@ export function Table({
     useGlobalFilter,
   );
 
-  const { headerGroups, rows, prepareRow, setGlobalFilter } = tableInstance;
+  const { state, headerGroups, rows, prepareRow, setGlobalFilter } = tableInstance;
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
     const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
@@ -155,7 +141,8 @@ export function Table({
                     <th
                       className={tableHeaderStyle}
                       {...column.getHeaderProps({
-                        style: { minWidth: column.minWidth, width: column.width },
+                        /*                         style: { minWidth: column.minWidth, width: column.width },
+                         */
                       })}
                     >
                       <div>{column.render('Header')}</div>
@@ -174,10 +161,10 @@ export function Table({
                     return (
                       <td
                         {...cell.getCellProps({
-                          style: {
+                          /*  style: {
                             minWidth: cell.column.minWidth,
                             width: cell.column.width,
-                          },
+                          }, */
                         })}
                       >
                         {cell.render('Cell')}
@@ -189,7 +176,9 @@ export function Table({
             })}
           </tbody>
         </table>
-        <div className={counterStyle}>{`Showing ${data.length} of ${total}`}</div>
+        <div className={counterStyle}>{`Showing ${
+          state.globalFilter ? rows.length : data.length
+        } of ${total}`}</div>
       </Spin>
     </div>
   );
@@ -198,20 +187,33 @@ export function Table({
 const wrapperStyle = css`
   overflow-y: hidden;
 
+  table {
+    display: inline-block;
+    border-spacing: 0;
+  }
+
   table thead,
   table tbody tr {
     display: table;
     width: 100%;
     table-layout: fixed;
-    border-bottom: 1px solid rgb(235, 236, 240);
-    min-height: 40px;
+    //border-bottom: 1px solid rgb(235, 236, 240);
+    height: 40px;
+
+    th {
+      border: 1px solid rgb(235, 236, 240);
+    }
+
+    td {
+      border: 1px solid rgb(235, 236, 240);
+    }
   }
 
   table tbody {
     display: block;
     height: 70vh;
     overflow-y: scroll;
-    border-bottom: 1px solid rgb(235, 236, 240);
+    //border-bottom: 1px solid rgb(235, 236, 240);
     cursor: pointer;
 
     tr :hover {
@@ -228,7 +230,8 @@ const tableHeaderStyle = css`
   text-align: left;
   font-size: 12px;
   color: rgb(108, 120, 139);
-  padding: 8px 4px 8px 2px;
+  /*   padding: 8px 0px 8px 2px;
+ */
   font-weight: 400;
 `;
 
