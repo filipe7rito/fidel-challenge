@@ -10,6 +10,7 @@
     "test": "jest --config=config/jest.config.js",
     "test:watch": "jest --config=config/jest.config.js --watch",
     "test:coverage": "jest --config=config/jest.config.js --coverage",
+    "test:coverage:open": "npm run test:coverage && open ./coverage/lcov-report/index.html",
     "type-check": "tsc",
     "lint": "eslint '**/*.{js,ts,tsx}'",
     "format": "prettier --write '**/*.{js,ts,tsx,yml,css,sass,json,md}'"

@@ -30,7 +30,9 @@ export function Table({
       {
         Header: 'Amount',
         id: 'amount',
-        accessor: 'amount',
+        accessor: (record: Transaction) => {
+          return record.amount.toFixed(2);
+        },
         Cell: function Cell(options: UseTableCellProps<Transaction>) {
           const { row } = options;
           const { original: transaction } = row;
@@ -81,7 +83,6 @@ export function Table({
       },
       {
         id: 'reload',
-        width: 30,
         Header: () => {
           return (
             <ReloadOutlined
@@ -138,13 +139,7 @@ export function Table({
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => {
                   return (
-                    <th
-                      className={tableHeaderStyle}
-                      {...column.getHeaderProps({
-                        /*                         style: { minWidth: column.minWidth, width: column.width },
-                         */
-                      })}
-                    >
+                    <th {...column.getHeaderProps()}>
                       <div>{column.render('Header')}</div>
                     </th>
                   );
@@ -158,18 +153,7 @@ export function Table({
               return (
                 <tr {...row.getRowProps()} onClick={() => onRowSelect(row.original)}>
                   {row.cells.map((cell) => {
-                    return (
-                      <td
-                        {...cell.getCellProps({
-                          /*  style: {
-                            minWidth: cell.column.minWidth,
-                            width: cell.column.width,
-                          }, */
-                        })}
-                      >
-                        {cell.render('Cell')}
-                      </td>
-                    );
+                    return <td {...cell.getCellProps({})}>{cell.render('Cell')}</td>;
                   })}
                 </tr>
               );
@@ -185,54 +169,51 @@ export function Table({
 }
 
 const wrapperStyle = css`
-  overflow-y: hidden;
-
   table {
-    display: inline-block;
-    border-spacing: 0;
-  }
-
-  table thead,
-  table tbody tr {
-    display: table;
     width: 100%;
-    table-layout: fixed;
-    //border-bottom: 1px solid rgb(235, 236, 240);
-    height: 40px;
-
-    th {
-      border: 1px solid rgb(235, 236, 240);
-    }
-
-    td {
-      border: 1px solid rgb(235, 236, 240);
-    }
   }
 
-  table tbody {
+  table tbody,
+  table thead {
     display: block;
-    height: 70vh;
+    border-bottom: 1px solid rgb(235, 236, 240);
+  }
+
+  thead tr th {
+    line-height: 30px;
+    text-align: left;
+    font-size: 12px;
+    color: rgb(108, 120, 139);
+    padding: 8px 0px 8px 2px;
+    font-weight: 400;
+  }
+
+  tbody {
     overflow-y: scroll;
-    //border-bottom: 1px solid rgb(235, 236, 240);
-    cursor: pointer;
+    height: 70vh;
+
+    tr {
+      border-bottom: 1px solid rgb(235, 236, 240);
+    }
 
     tr :hover {
+      cursor: pointer;
       background-color: rgb(248, 248, 248);
     }
   }
 
+  tbody td,
+  thead th {
+    line-height: 40px;
+    width: 20%;
+  }
+
+  tbody td:last-child,
+  thead th:last-child {
+  }
   .ant-spin-nested-loading > div > .ant-spin {
     position: unset;
   }
-`;
-
-const tableHeaderStyle = css`
-  text-align: left;
-  font-size: 12px;
-  color: rgb(108, 120, 139);
-  /*   padding: 8px 0px 8px 2px;
- */
-  font-weight: 400;
 `;
 
 const counterStyle = css`
