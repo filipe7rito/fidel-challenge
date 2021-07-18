@@ -3,7 +3,7 @@ import { Input, Spin } from 'antd';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import { css } from 'emotion';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Column, useGlobalFilter, useTable, UseTableCellProps } from 'react-table';
 import { MasterCardImage, VisaImage } from '../../images';
 import { Scheme, Transaction } from '../../types/transaction';
@@ -120,15 +120,24 @@ export function Table({
     );
   };
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
-    const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
+  const observer = useRef<IntersectionObserver>();
 
-    const hasReachedBottom = scrollHeight - scrollTop === clientHeight;
+  const lastRowReference = useCallback(
+    (node: HTMLTableRowElement) => {
+      if (loading) return;
 
-    if (hasReachedBottom) {
-      fetchData();
-    }
-  };
+      if (observer.current) observer.current.disconnect();
+
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !filter) {
+          fetchData();
+        }
+      });
+
+      if (node) observer.current.observe(node);
+    },
+    [loading],
+  );
 
   return (
     <div className={wrapperStyle}>
@@ -156,14 +165,17 @@ export function Table({
               </tr>
             ))}
           </thead>
-          <tbody data-testid="table-body" onScroll={handleScroll}>
+          <tbody data-testid="table-body">
             {rows.map((row, index) => {
               prepareRow(row);
 
+              const isLastRow = data.length === index + 1;
+
               return (
                 <tr
-                  data-testid={`table-row-${index}`}
                   {...row.getRowProps()}
+                  ref={isLastRow ? lastRowReference : undefined}
+                  data-testid={`table-row-${index}`}
                   onClick={() => onRowSelect(row.original)}
                 >
                   {row.cells.map((cell) => {

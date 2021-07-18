@@ -1,13 +1,14 @@
 /* eslint-disable import/extensions */
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { rest } from 'msw';
 import React from 'react';
 import { transactions } from '../../test/fixtures/transactions';
+import { baseUrl } from '../../test/mocks/handlers';
+import { server } from '../../test/mocks/server';
 import { Scheme } from '../../types/transaction';
 import { TransactionsList } from './TransactionsList';
-import { server } from '../../test/mocks/server';
-import { rest } from 'msw';
-import { baseUrl } from '../../test/mocks/handlers';
+import 'intersection-observer';
 
 describe('Transactions', () => {
   it('Render transactions list with results', async () => {
@@ -35,7 +36,8 @@ describe('Transactions', () => {
     );
   });
 
-  it('Fetch more transaction on scroll bottom', async () => {
+  // This test throws an error on setState due to IntersectionObserver
+  it('Fetch more data on scroll bottom', async () => {
     const { getByTestId, getAllByRole } = renderTransactions();
 
     await waitFor(() => {
@@ -51,6 +53,7 @@ describe('Transactions', () => {
 
     await waitFor(() => {
       // Header row plus body rows
+
       expect(getAllByRole('row').length).toEqual(41);
       expect(getByTestId('table-row-26')).toBeInTheDocument();
     });

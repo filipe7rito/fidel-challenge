@@ -1,6 +1,7 @@
 import { render, waitFor } from '@testing-library/react';
 import React from 'react';
 import App from './App';
+import 'intersection-observer';
 
 describe('App', () => {
   it('Renders app', async () => {

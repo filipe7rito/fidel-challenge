@@ -23,6 +23,7 @@
     "dayjs": "^1.10.6",
     "dotenv": "^10.0.0",
     "emotion": "^9.2.12",
+    "intersection-observer": "^0.12.0",
     "jest": "^27.0.6",
     "msw": "^0.32.0",
     "react": "^17.0.2",
