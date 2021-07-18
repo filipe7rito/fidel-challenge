@@ -13,7 +13,7 @@ export function TransactionPreview({
   onClosePreview: () => void;
 }) {
   return (
-    <div className={drawerWrapper}>
+    <div className={drawerWrapperStyle}>
       <Drawer
         data-testid="transaction-preview"
         title="Transaction details"
@@ -36,7 +36,7 @@ export function TransactionPreview({
   );
 }
 
-const drawerWrapper = css`
+const drawerWrapperStyle = css`
   .ant-drawer-content-wrapper {
     position: fixed;
   }

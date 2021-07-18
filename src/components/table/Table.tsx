@@ -108,6 +108,10 @@ export function Table({
 
   const { state, headerGroups, rows, prepareRow, setGlobalFilter } = tableInstance;
 
+  useEffect(() => {
+    setGlobalFilter(filter);
+  }, [filter, setGlobalFilter, data]);
+
   const renderCounter = () => {
     return (
       <div className={counterStyle}>{`Showing ${
@@ -125,10 +129,6 @@ export function Table({
       fetchData();
     }
   };
-
-  useEffect(() => {
-    setGlobalFilter(filter);
-  }, [filter, setGlobalFilter, data]);
 
   return (
     <div className={wrapperStyle}>

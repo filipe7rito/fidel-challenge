@@ -7,27 +7,25 @@ import { Table } from '../table';
 import { TransactionPreview } from '../transaction-preview/TransactionPreview';
 import { Last, Transaction } from '../../types/transaction';
 
-type TransactionsState = {
-  data: Transaction[];
-  pagination: {
-    current: number;
-    pageSize: number;
-    total: number;
-    last?: Last;
-  };
+type Pagination = {
+  current: number;
+  pageSize: number;
+  total: number;
+  last: Last | undefined;
 };
+
+const PAGE_SIZE = 20;
 
 export function TransactionsList() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [reloadToken, setReloadToken] = useState(0);
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [selectedTransaction, setSelectedTransaction] = useState<Transaction | null>(null);
-  const [transactionsState, setTransactionState] = useState<TransactionsState>({
-    data: [],
-    pagination: {
-      current: 1,
-      pageSize: 20,
-      total: 0,
-    },
+  const [reloadToken, setReloadToken] = useState(0);
+  const [pagination, setPagination] = useState<Pagination>({
+    current: 1,
+    pageSize: PAGE_SIZE,
+    total: 0,
+    last: undefined,
   });
 
   const showErrorNotification = () => {
@@ -39,28 +37,25 @@ export function TransactionsList() {
   };
 
   const fetchTransactions = async () => {
-    const { pageSize, last } = transactionsState.pagination;
+    const { pageSize, last } = pagination;
 
     setIsLoading(true);
 
     try {
+      // Fetch transactions and total number of transactions
       const [transactionResponse, total] = await Promise.all([
-        api.transactions.fetch({ last, limit: pageSize?.toString() }),
+        api.transactions.fetch({ last, limit: pageSize }),
         api.transactions.getTotals(),
       ]);
 
-      const transactions: Transaction[] = [...transactionsState.data, ...transactionResponse.items];
+      const newTransactions: Transaction[] = [...transactions, ...transactionResponse.items];
 
-      setTransactionState((currentState) => {
-        return {
-          ...currentState,
-          data: transactions,
-          pagination: {
-            ...currentState.pagination,
-            last: transactionResponse.last,
-            total,
-          },
-        };
+      setTransactions(newTransactions);
+
+      setPagination({
+        ...pagination,
+        last: transactionResponse.last,
+        total,
       });
     } catch (e) {
       showErrorNotification();
@@ -70,16 +65,12 @@ export function TransactionsList() {
   };
 
   const handleReloadData = () => {
-    setTransactionState((currentState) => {
-      return {
-        ...currentState,
-        data: [],
-        pagination: {
-          ...currentState.pagination,
-          last: undefined,
-          total: 0,
-        },
-      };
+    setTransactions([]);
+
+    setPagination({
+      ...pagination,
+      total: 0,
+      last: undefined,
     });
 
     setReloadToken((currentToken) => currentToken + 1);
@@ -93,9 +84,9 @@ export function TransactionsList() {
     <div className={transactionsListStyle}>
       <h2>Transactions</h2>
       <Table
-        data={transactionsState.data}
+        data={transactions}
         loading={isLoading}
-        total={transactionsState.pagination.total}
+        total={pagination.total}
         fetchData={fetchTransactions}
         reload={handleReloadData}
         onRowSelect={(transaction: Transaction) => setSelectedTransaction(transaction)}
