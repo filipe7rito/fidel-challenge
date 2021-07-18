@@ -1,15 +1,20 @@
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import React from 'react';
 import App from './App';
 
 describe('App', () => {
-  test('Render app', () => {
-    const { asFragment } = renderPersons();
+  it('Renders app', async () => {
+    const { asFragment, getByTestId } = renderApp();
+
+    await waitFor(() => {
+      // First row in table
+      getByTestId('table-row-0');
+    });
 
     expect(asFragment()).toMatchSnapshot();
   });
 
-  function renderPersons() {
+  function renderApp() {
     return render(<App />);
   }
 });

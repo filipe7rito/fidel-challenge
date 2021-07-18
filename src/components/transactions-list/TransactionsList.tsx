@@ -1,10 +1,11 @@
 import 'antd/dist/antd.css';
+import { notification } from 'antd';
 import { css } from 'emotion';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import api from '../../api';
-import { Last, Transaction } from '../../api/transactions-api/types';
 import { Table } from '../table';
 import { TransactionPreview } from '../transaction-preview/TransactionPreview';
+import { Last, Transaction } from '../../types/transaction';
 
 type TransactionsState = {
   data: Transaction[];
@@ -29,6 +30,14 @@ export function TransactionsList() {
     },
   });
 
+  const showErrorNotification = () => {
+    notification.error({
+      message: 'An error has ocurred',
+      description: 'Our team has been notified. If the problem persists, please submit a request.',
+      placement: 'bottomRight',
+    });
+  };
+
   const fetchTransactions = async () => {
     const { pageSize, last } = transactionsState.pagination;
 
@@ -42,35 +51,41 @@ export function TransactionsList() {
 
       const transactions: Transaction[] = [...transactionsState.data, ...transactionResponse.items];
 
-      setTransactionState({
-        ...transactionsState,
-        data: transactions,
-        pagination: {
-          ...transactionsState.pagination,
-          last: transactionResponse.last,
-          total,
-        },
+      setTransactionState((currentState) => {
+        return {
+          ...currentState,
+          data: transactions,
+          pagination: {
+            ...currentState.pagination,
+            last: transactionResponse.last,
+            total,
+          },
+        };
       });
-
-      setIsLoading(false);
     } catch (e) {
+      showErrorNotification();
+    } finally {
       setIsLoading(false);
     }
   };
 
   const handleReloadData = () => {
-    setTransactionState({
-      ...transactionsState,
-      data: [],
-      pagination: {
-        ...transactionsState.pagination,
-        last: undefined,
-      },
+    setTransactionState((currentState) => {
+      return {
+        ...currentState,
+        data: [],
+        pagination: {
+          ...currentState.pagination,
+          last: undefined,
+          total: 0,
+        },
+      };
     });
+
     setReloadToken((currentToken) => currentToken + 1);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchTransactions();
   }, [reloadToken]);
 

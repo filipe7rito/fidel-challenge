@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import { css } from 'emotion';
 import React from 'react';
 import ReactJson from 'react-json-view';
-import { Transaction } from '../../api/transactions-api/types';
+import { Transaction } from '../../types/transaction';
 
 export function TransactionPreview({
   transaction,
@@ -15,6 +15,7 @@ export function TransactionPreview({
   return (
     <div className={drawerWrapper}>
       <Drawer
+        data-testid="transaction-preview"
         title="Transaction details"
         placement="right"
         onClose={() => onClosePreview()}

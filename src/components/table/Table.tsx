@@ -5,8 +5,8 @@ import localizedFormat from 'dayjs/plugin/localizedFormat';
 import { css } from 'emotion';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Column, useGlobalFilter, useTable, UseTableCellProps } from 'react-table';
-import { Scheme, Transaction } from '../../api/transactions-api/types';
 import { MasterCardImage, VisaImage } from '../../images';
+import { Scheme, Transaction } from '../../types/transaction';
 
 export function Table({
   data,
@@ -86,6 +86,7 @@ export function Table({
         Header: () => {
           return (
             <ReloadOutlined
+              data-testid="reload-button"
               onClick={() => reload()}
               className={css`
                 cursor: pointer;
@@ -106,6 +107,14 @@ export function Table({
   );
 
   const { state, headerGroups, rows, prepareRow, setGlobalFilter } = tableInstance;
+
+  const renderCounter = () => {
+    return (
+      <div className={counterStyle}>{`Showing ${
+        state.globalFilter ? rows.length : data.length
+      } of ${total}`}</div>
+    );
+  };
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
     const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
@@ -133,7 +142,7 @@ export function Table({
       />
 
       <Spin spinning={loading} tip="Loading...">
-        <table>
+        <table role="table">
           <thead>
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
@@ -147,11 +156,16 @@ export function Table({
               </tr>
             ))}
           </thead>
-          <tbody onScroll={handleScroll}>
-            {rows.map((row) => {
+          <tbody data-testid="table-body" onScroll={handleScroll}>
+            {rows.map((row, index) => {
               prepareRow(row);
+
               return (
-                <tr {...row.getRowProps()} onClick={() => onRowSelect(row.original)}>
+                <tr
+                  data-testid={`table-row-${index}`}
+                  {...row.getRowProps()}
+                  onClick={() => onRowSelect(row.original)}
+                >
                   {row.cells.map((cell) => {
                     return <td {...cell.getCellProps({})}>{cell.render('Cell')}</td>;
                   })}
@@ -160,9 +174,7 @@ export function Table({
             })}
           </tbody>
         </table>
-        <div className={counterStyle}>{`Showing ${
-          state.globalFilter ? rows.length : data.length
-        } of ${total}`}</div>
+        {renderCounter()}
       </Spin>
     </div>
   );

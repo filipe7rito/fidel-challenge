@@ -1,6 +1,6 @@
 import axios from 'axios';
+import { Last, Transaction } from '../../types/transaction';
 import { ApiResponse, axiosRequestConfig } from '../apiConfig';
-import { Last, Transaction } from './types';
 
 const { REACT_APP_FIDEL_PROGRAM_ID } = process.env;
 
@@ -26,12 +26,15 @@ export async function fetch({
 }
 
 export async function getTotals(): Promise<number> {
-  const response = await axios.get(`/programs/${REACT_APP_FIDEL_PROGRAM_ID}/transactions`, {
-    params: {
-      select: 'count',
+  const response = await axios.get<ApiResponse<{ count: number }>>(
+    `/programs/${REACT_APP_FIDEL_PROGRAM_ID}/transactions`,
+    {
+      params: {
+        select: 'count',
+      },
+      ...axiosRequestConfig,
     },
-    ...axiosRequestConfig,
-  });
+  );
 
   return response.data.count;
 }

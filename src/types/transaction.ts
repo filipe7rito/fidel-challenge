@@ -6,6 +6,7 @@ export enum Scheme {
 export type Transaction = {
   currency: string;
   programId: string;
+  accountId: string;
   id: string;
   created: string;
   updated: string;
@@ -13,7 +14,6 @@ export type Transaction = {
   cleared: boolean;
   datetime: string;
   wallet: string | null;
-  offer: string | null;
   card: Card;
   location: Location;
   brand: Brand;

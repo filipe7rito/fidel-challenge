@@ -1,288 +1,1580 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Render app 1`] = `
+exports[`App Renders app 1`] = `
 <DocumentFragment>
   <div
-    class="css-1rpfbq7"
+    class="css-8sdul9"
   >
-    <div
+    <main
       class="css-1d6fn9t"
     >
-      <main>
+      <div
+        class="css-gaa0i9"
+      >
+        <h2>
+          Transactions
+        </h2>
         <div
-          class="css-gaa0i9"
+          class="css-grozar"
         >
-          <h2>
-            Transactions
-          </h2>
-          <div
-            class="css-1affd20"
+          <span
+            class="ant-input-affix-wrapper css-1joxlfe"
           >
             <span
-              class="ant-input-affix-wrapper css-1joxlfe"
+              class="ant-input-prefix"
             >
               <span
-                class="ant-input-prefix"
+                aria-label="search"
+                class="anticon anticon-search"
+                role="img"
               >
-                <span
-                  aria-label="search"
-                  class="anticon anticon-search"
-                  role="img"
+                <svg
+                  aria-hidden="true"
+                  data-icon="search"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="search"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="64 64 896 896"
-                    width="1em"
-                  >
-                    <path
-                      d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"
-                    />
-                  </svg>
-                </span>
-              </span>
-              <input
-                class="ant-input"
-                placeholder="Filter table results"
-                type="text"
-                value=""
-              />
-              <span
-                class="ant-input-suffix"
-              >
-                <span
-                  aria-label="close-circle"
-                  class="anticon anticon-close-circle ant-input-clear-icon-hidden ant-input-clear-icon"
-                  role="button"
-                  tabindex="-1"
-                >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="close-circle"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="64 64 896 896"
-                    width="1em"
-                  >
-                    <path
-                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"
+                  />
+                </svg>
               </span>
             </span>
-            <div
-              class="ant-spin-nested-loading"
+            <input
+              class="ant-input"
+              placeholder="Filter table results"
+              type="text"
+              value=""
+            />
+            <span
+              class="ant-input-suffix"
             >
-              <div>
-                <div
-                  class="ant-spin ant-spin-spinning ant-spin-show-text"
-                >
-                  <span
-                    class="ant-spin-dot ant-spin-dot-spin"
-                  >
-                    <i
-                      class="ant-spin-dot-item"
-                    />
-                    <i
-                      class="ant-spin-dot-item"
-                    />
-                    <i
-                      class="ant-spin-dot-item"
-                    />
-                    <i
-                      class="ant-spin-dot-item"
-                    />
-                  </span>
-                  <div
-                    class="ant-spin-text"
-                  >
-                    Loading...
-                  </div>
-                </div>
-              </div>
-              <div
-                class="ant-spin-container ant-spin-blur"
+              <span
+                aria-label="close-circle"
+                class="anticon anticon-close-circle ant-input-clear-icon-hidden ant-input-clear-icon"
+                role="button"
+                tabindex="-1"
               >
-                <table>
-                  <thead>
-                    <tr
-                      role="row"
-                    >
-                      <th
-                        class="css-mxi0c8"
-                        colspan="1"
-                        role="columnheader"
-                      >
-                        <div>
-                          Amount
-                        </div>
-                      </th>
-                      <th
-                        class="css-mxi0c8"
-                        colspan="1"
-                        role="columnheader"
-                      >
-                        <div>
-                          Address
-                        </div>
-                      </th>
-                      <th
-                        class="css-mxi0c8"
-                        colspan="1"
-                        role="columnheader"
-                      >
-                        <div>
-                          Scheme
-                        </div>
-                      </th>
-                      <th
-                        class="css-mxi0c8"
-                        colspan="1"
-                        role="columnheader"
-                      >
-                        <div>
-                          Card
-                        </div>
-                      </th>
-                      <th
-                        class="css-mxi0c8"
-                        colspan="1"
-                        role="columnheader"
-                      >
-                        <div>
-                          Date(UTC)
-                        </div>
-                      </th>
-                      <th
-                        class="css-mxi0c8"
-                        colspan="1"
-                        role="columnheader"
-                      >
-                        <div>
-                          <span
-                            aria-label="reload"
-                            class="anticon anticon-reload css-1tya5c2"
-                            role="img"
-                            tabindex="-1"
-                          >
-                            <svg
-                              aria-hidden="true"
-                              data-icon="reload"
-                              fill="currentColor"
-                              focusable="false"
-                              height="1em"
-                              viewBox="64 64 896 896"
-                              width="1em"
-                            >
-                              <path
-                                d="M909.1 209.3l-56.4 44.1C775.8 155.1 656.2 92 521.9 92 290 92 102.3 279.5 102 511.5 101.7 743.7 289.8 932 521.9 932c181.3 0 335.8-115 394.6-276.1 1.5-4.2-.7-8.9-4.9-10.3l-56.7-19.5a8 8 0 00-10.1 4.8c-1.8 5-3.8 10-5.9 14.9-17.3 41-42.1 77.8-73.7 109.4A344.77 344.77 0 01655.9 829c-42.3 17.9-87.4 27-133.8 27-46.5 0-91.5-9.1-133.8-27A341.5 341.5 0 01279 755.2a342.16 342.16 0 01-73.7-109.4c-17.9-42.4-27-87.4-27-133.9s9.1-91.5 27-133.9c17.3-41 42.1-77.8 73.7-109.4 31.6-31.6 68.4-56.4 109.3-73.8 42.3-17.9 87.4-27 133.8-27 46.5 0 91.5 9.1 133.8 27a341.5 341.5 0 01109.3 73.8c9.9 9.9 19.2 20.4 27.8 31.4l-60.2 47a8 8 0 003 14.1l175.6 43c5 1.2 9.9-2.6 9.9-7.7l.8-180.9c-.1-6.6-7.8-10.3-13-6.2z"
-                              />
-                            </svg>
-                          </span>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody />
-                </table>
-                <div
-                  class="css-a0z5ei"
+                <svg
+                  aria-hidden="true"
+                  data-icon="close-circle"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
                 >
-                  Showing 0 of 0
-                </div>
+                  <path
+                    d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </span>
+          <div
+            class="ant-spin-nested-loading"
+          >
+            <div
+              class="ant-spin-container"
+            >
+              <table
+                role="table"
+              >
+                <thead>
+                  <tr
+                    role="row"
+                  >
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                    >
+                      <div>
+                        Amount
+                      </div>
+                    </th>
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                    >
+                      <div>
+                        Address
+                      </div>
+                    </th>
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                    >
+                      <div>
+                        Scheme
+                      </div>
+                    </th>
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                    >
+                      <div>
+                        Card
+                      </div>
+                    </th>
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                    >
+                      <div>
+                        Date(UTC)
+                      </div>
+                    </th>
+                    <th
+                      colspan="1"
+                      role="columnheader"
+                    >
+                      <div>
+                        <span
+                          aria-label="reload"
+                          class="anticon anticon-reload css-1tya5c2"
+                          data-testid="reload-button"
+                          role="img"
+                          tabindex="-1"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="reload"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M909.1 209.3l-56.4 44.1C775.8 155.1 656.2 92 521.9 92 290 92 102.3 279.5 102 511.5 101.7 743.7 289.8 932 521.9 932c181.3 0 335.8-115 394.6-276.1 1.5-4.2-.7-8.9-4.9-10.3l-56.7-19.5a8 8 0 00-10.1 4.8c-1.8 5-3.8 10-5.9 14.9-17.3 41-42.1 77.8-73.7 109.4A344.77 344.77 0 01655.9 829c-42.3 17.9-87.4 27-133.8 27-46.5 0-91.5-9.1-133.8-27A341.5 341.5 0 01279 755.2a342.16 342.16 0 01-73.7-109.4c-17.9-42.4-27-87.4-27-133.9s9.1-91.5 27-133.9c17.3-41 42.1-77.8 73.7-109.4 31.6-31.6 68.4-56.4 109.3-73.8 42.3-17.9 87.4-27 133.8-27 46.5 0 91.5 9.1 133.8 27a341.5 341.5 0 01109.3 73.8c9.9 9.9 19.2 20.4 27.8 31.4l-60.2 47a8 8 0 003 14.1l175.6 43c5 1.2 9.9-2.6 9.9-7.7l.8-180.9c-.1-6.6-7.8-10.3-13-6.2z"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  data-testid="table-body"
+                >
+                  <tr
+                    data-testid="table-row-0"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          48.78
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="10"
+                        viewBox="0 0 29 10"
+                        width="29"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M14.7771 3.18797C14.762 4.57733 15.9235 5.35133 16.7987 5.81318C17.6979 6.28578 17.9996 6.5891 17.9962 7.01173C17.9894 7.65913 17.2786 7.94439 16.614 7.95551C15.4534 7.97511 14.7796 7.61668 14.2427 7.34624L13.8247 9.45988C14.3637 9.72733 15.3597 9.96058 16.3923 9.9723C18.8181 9.9723 20.4043 8.67787 20.412 6.67207C20.4222 4.12684 17.1548 3.98636 17.1772 2.84902C17.1846 2.50327 17.4892 2.13551 18.1565 2.04106C18.4871 1.99479 19.3995 1.95869 20.4328 2.47278L20.8385 0.427536C20.2826 0.209585 19.5682 0 18.6783 0C16.3964 0 14.79 1.31105 14.7771 3.18797ZM24.7395 0.176346C24.296 0.176346 23.9223 0.454791 23.7566 0.883759L20.2919 9.82142H22.716L23.1977 8.38041H26.1596L26.4386 9.82142H28.574L26.71 0.176346H24.7395ZM25.0777 2.78243L25.7772 6.40391H23.8622L25.0777 2.78243ZM11.8397 0.176346L9.92964 9.82142H12.2386L14.148 0.176346H11.8397ZM8.42354 0.176346L6.02029 6.74094L5.04824 1.15945C4.93439 0.536328 4.48377 0.176346 3.98336 0.176346H0.054434L0 0.455986C0.80632 0.645602 1.72283 0.951192 2.2779 1.27686C2.61777 1.47628 2.71458 1.65024 2.82632 2.12404L4.66732 9.82142H7.10774L10.8486 0.176346H8.42354Z"
+                          fill="url(#paint0_linear)"
+                          fill-rule="evenodd"
+                        />
+                        <defs>
+                          <lineargradient
+                            gradientUnits="userSpaceOnUse"
+                            id="paint0_linear"
+                            x1="28.574"
+                            x2="0"
+                            y1="0.259826"
+                            y2="0.259826"
+                          >
+                            <stop
+                              stop-color="#21489F"
+                            />
+                            <stop
+                              offset="1"
+                              stop-color="#261A5E"
+                            />
+                          </lineargradient>
+                        </defs>
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-1"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          12.20
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="10"
+                        viewBox="0 0 29 10"
+                        width="29"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M14.7771 3.18797C14.762 4.57733 15.9235 5.35133 16.7987 5.81318C17.6979 6.28578 17.9996 6.5891 17.9962 7.01173C17.9894 7.65913 17.2786 7.94439 16.614 7.95551C15.4534 7.97511 14.7796 7.61668 14.2427 7.34624L13.8247 9.45988C14.3637 9.72733 15.3597 9.96058 16.3923 9.9723C18.8181 9.9723 20.4043 8.67787 20.412 6.67207C20.4222 4.12684 17.1548 3.98636 17.1772 2.84902C17.1846 2.50327 17.4892 2.13551 18.1565 2.04106C18.4871 1.99479 19.3995 1.95869 20.4328 2.47278L20.8385 0.427536C20.2826 0.209585 19.5682 0 18.6783 0C16.3964 0 14.79 1.31105 14.7771 3.18797ZM24.7395 0.176346C24.296 0.176346 23.9223 0.454791 23.7566 0.883759L20.2919 9.82142H22.716L23.1977 8.38041H26.1596L26.4386 9.82142H28.574L26.71 0.176346H24.7395ZM25.0777 2.78243L25.7772 6.40391H23.8622L25.0777 2.78243ZM11.8397 0.176346L9.92964 9.82142H12.2386L14.148 0.176346H11.8397ZM8.42354 0.176346L6.02029 6.74094L5.04824 1.15945C4.93439 0.536328 4.48377 0.176346 3.98336 0.176346H0.054434L0 0.455986C0.80632 0.645602 1.72283 0.951192 2.2779 1.27686C2.61777 1.47628 2.71458 1.65024 2.82632 2.12404L4.66732 9.82142H7.10774L10.8486 0.176346H8.42354Z"
+                          fill="url(#paint0_linear)"
+                          fill-rule="evenodd"
+                        />
+                        <defs>
+                          <lineargradient
+                            gradientUnits="userSpaceOnUse"
+                            id="paint0_linear"
+                            x1="28.574"
+                            x2="0"
+                            y1="0.259826"
+                            y2="0.259826"
+                          >
+                            <stop
+                              stop-color="#21489F"
+                            />
+                            <stop
+                              offset="1"
+                              stop-color="#261A5E"
+                            />
+                          </lineargradient>
+                        </defs>
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-2"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          90.61
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4 #F
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="10"
+                        viewBox="0 0 29 10"
+                        width="29"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M14.7771 3.18797C14.762 4.57733 15.9235 5.35133 16.7987 5.81318C17.6979 6.28578 17.9996 6.5891 17.9962 7.01173C17.9894 7.65913 17.2786 7.94439 16.614 7.95551C15.4534 7.97511 14.7796 7.61668 14.2427 7.34624L13.8247 9.45988C14.3637 9.72733 15.3597 9.96058 16.3923 9.9723C18.8181 9.9723 20.4043 8.67787 20.412 6.67207C20.4222 4.12684 17.1548 3.98636 17.1772 2.84902C17.1846 2.50327 17.4892 2.13551 18.1565 2.04106C18.4871 1.99479 19.3995 1.95869 20.4328 2.47278L20.8385 0.427536C20.2826 0.209585 19.5682 0 18.6783 0C16.3964 0 14.79 1.31105 14.7771 3.18797ZM24.7395 0.176346C24.296 0.176346 23.9223 0.454791 23.7566 0.883759L20.2919 9.82142H22.716L23.1977 8.38041H26.1596L26.4386 9.82142H28.574L26.71 0.176346H24.7395ZM25.0777 2.78243L25.7772 6.40391H23.8622L25.0777 2.78243ZM11.8397 0.176346L9.92964 9.82142H12.2386L14.148 0.176346H11.8397ZM8.42354 0.176346L6.02029 6.74094L5.04824 1.15945C4.93439 0.536328 4.48377 0.176346 3.98336 0.176346H0.054434L0 0.455986C0.80632 0.645602 1.72283 0.951192 2.2779 1.27686C2.61777 1.47628 2.71458 1.65024 2.82632 2.12404L4.66732 9.82142H7.10774L10.8486 0.176346H8.42354Z"
+                          fill="url(#paint0_linear)"
+                          fill-rule="evenodd"
+                        />
+                        <defs>
+                          <lineargradient
+                            gradientUnits="userSpaceOnUse"
+                            id="paint0_linear"
+                            x1="28.574"
+                            x2="0"
+                            y1="0.259826"
+                            y2="0.259826"
+                          >
+                            <stop
+                              stop-color="#21489F"
+                            />
+                            <stop
+                              offset="1"
+                              stop-color="#261A5E"
+                            />
+                          </lineargradient>
+                        </defs>
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-3"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          12.99
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="13"
+                        viewBox="0 0 21 13"
+                        width="21"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M7.64941 11.4892H13.32V1.3754H7.64941V11.4892Z"
+                          fill="#F75B1B"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M8.01018 6.43222C8.01018 4.38046 8.97821 2.5532 10.4854 1.37531C9.38287 0.513856 7.99213 0 6.48032 0C2.90126 0 0 2.87996 0 6.43222C0 9.98447 2.90126 12.8644 6.48032 12.8644C7.99213 12.8644 9.38287 12.3506 10.4854 11.4891C8.97821 10.3113 8.01018 8.48397 8.01018 6.43222Z"
+                          fill="#E20025"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M20.769 10.4177V10.1683H20.7032L20.6278 10.34L20.5524 10.1683H20.4866V10.4177H20.5327V10.2294L20.6035 10.3919H20.6517L20.7225 10.229V10.4177H20.769ZM20.353 10.4177V10.2106H20.4372V10.1686H20.2228V10.2106H20.3069V10.4177H20.353ZM20.9713 6.43179C20.9713 9.98447 18.07 12.864 14.491 12.864C12.9792 12.864 11.5884 12.3501 10.4863 11.4887C11.9935 10.3113 12.9612 8.48361 12.9612 6.43179C12.9612 4.38003 11.9935 2.55278 10.4863 1.37489C11.5884 0.513856 12.9792 0 14.491 0C18.07 0 20.9713 2.87954 20.9713 6.43179Z"
+                          fill="#F0A029"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-4"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          93.67
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="13"
+                        viewBox="0 0 21 13"
+                        width="21"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M7.64941 11.4892H13.32V1.3754H7.64941V11.4892Z"
+                          fill="#F75B1B"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M8.01018 6.43222C8.01018 4.38046 8.97821 2.5532 10.4854 1.37531C9.38287 0.513856 7.99213 0 6.48032 0C2.90126 0 0 2.87996 0 6.43222C0 9.98447 2.90126 12.8644 6.48032 12.8644C7.99213 12.8644 9.38287 12.3506 10.4854 11.4891C8.97821 10.3113 8.01018 8.48397 8.01018 6.43222Z"
+                          fill="#E20025"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M20.769 10.4177V10.1683H20.7032L20.6278 10.34L20.5524 10.1683H20.4866V10.4177H20.5327V10.2294L20.6035 10.3919H20.6517L20.7225 10.229V10.4177H20.769ZM20.353 10.4177V10.2106H20.4372V10.1686H20.2228V10.2106H20.3069V10.4177H20.353ZM20.9713 6.43179C20.9713 9.98447 18.07 12.864 14.491 12.864C12.9792 12.864 11.5884 12.3501 10.4863 11.4887C11.9935 10.3113 12.9612 8.48361 12.9612 6.43179C12.9612 4.38003 11.9935 2.55278 10.4863 1.37489C11.5884 0.513856 12.9792 0 14.491 0C18.07 0 20.9713 2.87954 20.9713 6.43179Z"
+                          fill="#F0A029"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-5"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          20.20
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="13"
+                        viewBox="0 0 21 13"
+                        width="21"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M7.64941 11.4892H13.32V1.3754H7.64941V11.4892Z"
+                          fill="#F75B1B"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M8.01018 6.43222C8.01018 4.38046 8.97821 2.5532 10.4854 1.37531C9.38287 0.513856 7.99213 0 6.48032 0C2.90126 0 0 2.87996 0 6.43222C0 9.98447 2.90126 12.8644 6.48032 12.8644C7.99213 12.8644 9.38287 12.3506 10.4854 11.4891C8.97821 10.3113 8.01018 8.48397 8.01018 6.43222Z"
+                          fill="#E20025"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M20.769 10.4177V10.1683H20.7032L20.6278 10.34L20.5524 10.1683H20.4866V10.4177H20.5327V10.2294L20.6035 10.3919H20.6517L20.7225 10.229V10.4177H20.769ZM20.353 10.4177V10.2106H20.4372V10.1686H20.2228V10.2106H20.3069V10.4177H20.353ZM20.9713 6.43179C20.9713 9.98447 18.07 12.864 14.491 12.864C12.9792 12.864 11.5884 12.3501 10.4863 11.4887C11.9935 10.3113 12.9612 8.48361 12.9612 6.43179C12.9612 4.38003 11.9935 2.55278 10.4863 1.37489C11.5884 0.513856 12.9792 0 14.491 0C18.07 0 20.9713 2.87954 20.9713 6.43179Z"
+                          fill="#F0A029"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-6"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          7.58
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="13"
+                        viewBox="0 0 21 13"
+                        width="21"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M7.64941 11.4892H13.32V1.3754H7.64941V11.4892Z"
+                          fill="#F75B1B"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M8.01018 6.43222C8.01018 4.38046 8.97821 2.5532 10.4854 1.37531C9.38287 0.513856 7.99213 0 6.48032 0C2.90126 0 0 2.87996 0 6.43222C0 9.98447 2.90126 12.8644 6.48032 12.8644C7.99213 12.8644 9.38287 12.3506 10.4854 11.4891C8.97821 10.3113 8.01018 8.48397 8.01018 6.43222Z"
+                          fill="#E20025"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M20.769 10.4177V10.1683H20.7032L20.6278 10.34L20.5524 10.1683H20.4866V10.4177H20.5327V10.2294L20.6035 10.3919H20.6517L20.7225 10.229V10.4177H20.769ZM20.353 10.4177V10.2106H20.4372V10.1686H20.2228V10.2106H20.3069V10.4177H20.353ZM20.9713 6.43179C20.9713 9.98447 18.07 12.864 14.491 12.864C12.9792 12.864 11.5884 12.3501 10.4863 11.4887C11.9935 10.3113 12.9612 8.48361 12.9612 6.43179C12.9612 4.38003 11.9935 2.55278 10.4863 1.37489C11.5884 0.513856 12.9792 0 14.491 0C18.07 0 20.9713 2.87954 20.9713 6.43179Z"
+                          fill="#F0A029"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-7"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          23.18
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="13"
+                        viewBox="0 0 21 13"
+                        width="21"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M7.64941 11.4892H13.32V1.3754H7.64941V11.4892Z"
+                          fill="#F75B1B"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M8.01018 6.43222C8.01018 4.38046 8.97821 2.5532 10.4854 1.37531C9.38287 0.513856 7.99213 0 6.48032 0C2.90126 0 0 2.87996 0 6.43222C0 9.98447 2.90126 12.8644 6.48032 12.8644C7.99213 12.8644 9.38287 12.3506 10.4854 11.4891C8.97821 10.3113 8.01018 8.48397 8.01018 6.43222Z"
+                          fill="#E20025"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M20.769 10.4177V10.1683H20.7032L20.6278 10.34L20.5524 10.1683H20.4866V10.4177H20.5327V10.2294L20.6035 10.3919H20.6517L20.7225 10.229V10.4177H20.769ZM20.353 10.4177V10.2106H20.4372V10.1686H20.2228V10.2106H20.3069V10.4177H20.353ZM20.9713 6.43179C20.9713 9.98447 18.07 12.864 14.491 12.864C12.9792 12.864 11.5884 12.3501 10.4863 11.4887C11.9935 10.3113 12.9612 8.48361 12.9612 6.43179C12.9612 4.38003 11.9935 2.55278 10.4863 1.37489C11.5884 0.513856 12.9792 0 14.491 0C18.07 0 20.9713 2.87954 20.9713 6.43179Z"
+                          fill="#F0A029"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-8"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          43.70
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="13"
+                        viewBox="0 0 21 13"
+                        width="21"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M7.64941 11.4892H13.32V1.3754H7.64941V11.4892Z"
+                          fill="#F75B1B"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M8.01018 6.43222C8.01018 4.38046 8.97821 2.5532 10.4854 1.37531C9.38287 0.513856 7.99213 0 6.48032 0C2.90126 0 0 2.87996 0 6.43222C0 9.98447 2.90126 12.8644 6.48032 12.8644C7.99213 12.8644 9.38287 12.3506 10.4854 11.4891C8.97821 10.3113 8.01018 8.48397 8.01018 6.43222Z"
+                          fill="#E20025"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M20.769 10.4177V10.1683H20.7032L20.6278 10.34L20.5524 10.1683H20.4866V10.4177H20.5327V10.2294L20.6035 10.3919H20.6517L20.7225 10.229V10.4177H20.769ZM20.353 10.4177V10.2106H20.4372V10.1686H20.2228V10.2106H20.3069V10.4177H20.353ZM20.9713 6.43179C20.9713 9.98447 18.07 12.864 14.491 12.864C12.9792 12.864 11.5884 12.3501 10.4863 11.4887C11.9935 10.3113 12.9612 8.48361 12.9612 6.43179C12.9612 4.38003 11.9935 2.55278 10.4863 1.37489C11.5884 0.513856 12.9792 0 14.491 0C18.07 0 20.9713 2.87954 20.9713 6.43179Z"
+                          fill="#F0A029"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-9"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          76.83
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="10"
+                        viewBox="0 0 29 10"
+                        width="29"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M14.7771 3.18797C14.762 4.57733 15.9235 5.35133 16.7987 5.81318C17.6979 6.28578 17.9996 6.5891 17.9962 7.01173C17.9894 7.65913 17.2786 7.94439 16.614 7.95551C15.4534 7.97511 14.7796 7.61668 14.2427 7.34624L13.8247 9.45988C14.3637 9.72733 15.3597 9.96058 16.3923 9.9723C18.8181 9.9723 20.4043 8.67787 20.412 6.67207C20.4222 4.12684 17.1548 3.98636 17.1772 2.84902C17.1846 2.50327 17.4892 2.13551 18.1565 2.04106C18.4871 1.99479 19.3995 1.95869 20.4328 2.47278L20.8385 0.427536C20.2826 0.209585 19.5682 0 18.6783 0C16.3964 0 14.79 1.31105 14.7771 3.18797ZM24.7395 0.176346C24.296 0.176346 23.9223 0.454791 23.7566 0.883759L20.2919 9.82142H22.716L23.1977 8.38041H26.1596L26.4386 9.82142H28.574L26.71 0.176346H24.7395ZM25.0777 2.78243L25.7772 6.40391H23.8622L25.0777 2.78243ZM11.8397 0.176346L9.92964 9.82142H12.2386L14.148 0.176346H11.8397ZM8.42354 0.176346L6.02029 6.74094L5.04824 1.15945C4.93439 0.536328 4.48377 0.176346 3.98336 0.176346H0.054434L0 0.455986C0.80632 0.645602 1.72283 0.951192 2.2779 1.27686C2.61777 1.47628 2.71458 1.65024 2.82632 2.12404L4.66732 9.82142H7.10774L10.8486 0.176346H8.42354Z"
+                          fill="url(#paint0_linear)"
+                          fill-rule="evenodd"
+                        />
+                        <defs>
+                          <lineargradient
+                            gradientUnits="userSpaceOnUse"
+                            id="paint0_linear"
+                            x1="28.574"
+                            x2="0"
+                            y1="0.259826"
+                            y2="0.259826"
+                          >
+                            <stop
+                              stop-color="#21489F"
+                            />
+                            <stop
+                              offset="1"
+                              stop-color="#261A5E"
+                            />
+                          </lineargradient>
+                        </defs>
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-10"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          95.93
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="10"
+                        viewBox="0 0 29 10"
+                        width="29"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M14.7771 3.18797C14.762 4.57733 15.9235 5.35133 16.7987 5.81318C17.6979 6.28578 17.9996 6.5891 17.9962 7.01173C17.9894 7.65913 17.2786 7.94439 16.614 7.95551C15.4534 7.97511 14.7796 7.61668 14.2427 7.34624L13.8247 9.45988C14.3637 9.72733 15.3597 9.96058 16.3923 9.9723C18.8181 9.9723 20.4043 8.67787 20.412 6.67207C20.4222 4.12684 17.1548 3.98636 17.1772 2.84902C17.1846 2.50327 17.4892 2.13551 18.1565 2.04106C18.4871 1.99479 19.3995 1.95869 20.4328 2.47278L20.8385 0.427536C20.2826 0.209585 19.5682 0 18.6783 0C16.3964 0 14.79 1.31105 14.7771 3.18797ZM24.7395 0.176346C24.296 0.176346 23.9223 0.454791 23.7566 0.883759L20.2919 9.82142H22.716L23.1977 8.38041H26.1596L26.4386 9.82142H28.574L26.71 0.176346H24.7395ZM25.0777 2.78243L25.7772 6.40391H23.8622L25.0777 2.78243ZM11.8397 0.176346L9.92964 9.82142H12.2386L14.148 0.176346H11.8397ZM8.42354 0.176346L6.02029 6.74094L5.04824 1.15945C4.93439 0.536328 4.48377 0.176346 3.98336 0.176346H0.054434L0 0.455986C0.80632 0.645602 1.72283 0.951192 2.2779 1.27686C2.61777 1.47628 2.71458 1.65024 2.82632 2.12404L4.66732 9.82142H7.10774L10.8486 0.176346H8.42354Z"
+                          fill="url(#paint0_linear)"
+                          fill-rule="evenodd"
+                        />
+                        <defs>
+                          <lineargradient
+                            gradientUnits="userSpaceOnUse"
+                            id="paint0_linear"
+                            x1="28.574"
+                            x2="0"
+                            y1="0.259826"
+                            y2="0.259826"
+                          >
+                            <stop
+                              stop-color="#21489F"
+                            />
+                            <stop
+                              offset="1"
+                              stop-color="#261A5E"
+                            />
+                          </lineargradient>
+                        </defs>
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-11"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          33.01
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="13"
+                        viewBox="0 0 21 13"
+                        width="21"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M7.64941 11.4892H13.32V1.3754H7.64941V11.4892Z"
+                          fill="#F75B1B"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M8.01018 6.43222C8.01018 4.38046 8.97821 2.5532 10.4854 1.37531C9.38287 0.513856 7.99213 0 6.48032 0C2.90126 0 0 2.87996 0 6.43222C0 9.98447 2.90126 12.8644 6.48032 12.8644C7.99213 12.8644 9.38287 12.3506 10.4854 11.4891C8.97821 10.3113 8.01018 8.48397 8.01018 6.43222Z"
+                          fill="#E20025"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M20.769 10.4177V10.1683H20.7032L20.6278 10.34L20.5524 10.1683H20.4866V10.4177H20.5327V10.2294L20.6035 10.3919H20.6517L20.7225 10.229V10.4177H20.769ZM20.353 10.4177V10.2106H20.4372V10.1686H20.2228V10.2106H20.3069V10.4177H20.353ZM20.9713 6.43179C20.9713 9.98447 18.07 12.864 14.491 12.864C12.9792 12.864 11.5884 12.3501 10.4863 11.4887C11.9935 10.3113 12.9612 8.48361 12.9612 6.43179C12.9612 4.38003 11.9935 2.55278 10.4863 1.37489C11.5884 0.513856 12.9792 0 14.491 0C18.07 0 20.9713 2.87954 20.9713 6.43179Z"
+                          fill="#F0A029"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-12"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          63.60
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="13"
+                        viewBox="0 0 21 13"
+                        width="21"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M7.64941 11.4892H13.32V1.3754H7.64941V11.4892Z"
+                          fill="#F75B1B"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M8.01018 6.43222C8.01018 4.38046 8.97821 2.5532 10.4854 1.37531C9.38287 0.513856 7.99213 0 6.48032 0C2.90126 0 0 2.87996 0 6.43222C0 9.98447 2.90126 12.8644 6.48032 12.8644C7.99213 12.8644 9.38287 12.3506 10.4854 11.4891C8.97821 10.3113 8.01018 8.48397 8.01018 6.43222Z"
+                          fill="#E20025"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M20.769 10.4177V10.1683H20.7032L20.6278 10.34L20.5524 10.1683H20.4866V10.4177H20.5327V10.2294L20.6035 10.3919H20.6517L20.7225 10.229V10.4177H20.769ZM20.353 10.4177V10.2106H20.4372V10.1686H20.2228V10.2106H20.3069V10.4177H20.353ZM20.9713 6.43179C20.9713 9.98447 18.07 12.864 14.491 12.864C12.9792 12.864 11.5884 12.3501 10.4863 11.4887C11.9935 10.3113 12.9612 8.48361 12.9612 6.43179C12.9612 4.38003 11.9935 2.55278 10.4863 1.37489C11.5884 0.513856 12.9792 0 14.491 0C18.07 0 20.9713 2.87954 20.9713 6.43179Z"
+                          fill="#F0A029"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-13"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          81.99
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="13"
+                        viewBox="0 0 21 13"
+                        width="21"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M7.64941 11.4892H13.32V1.3754H7.64941V11.4892Z"
+                          fill="#F75B1B"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M8.01018 6.43222C8.01018 4.38046 8.97821 2.5532 10.4854 1.37531C9.38287 0.513856 7.99213 0 6.48032 0C2.90126 0 0 2.87996 0 6.43222C0 9.98447 2.90126 12.8644 6.48032 12.8644C7.99213 12.8644 9.38287 12.3506 10.4854 11.4891C8.97821 10.3113 8.01018 8.48397 8.01018 6.43222Z"
+                          fill="#E20025"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M20.769 10.4177V10.1683H20.7032L20.6278 10.34L20.5524 10.1683H20.4866V10.4177H20.5327V10.2294L20.6035 10.3919H20.6517L20.7225 10.229V10.4177H20.769ZM20.353 10.4177V10.2106H20.4372V10.1686H20.2228V10.2106H20.3069V10.4177H20.353ZM20.9713 6.43179C20.9713 9.98447 18.07 12.864 14.491 12.864C12.9792 12.864 11.5884 12.3501 10.4863 11.4887C11.9935 10.3113 12.9612 8.48361 12.9612 6.43179C12.9612 4.38003 11.9935 2.55278 10.4863 1.37489C11.5884 0.513856 12.9792 0 14.491 0C18.07 0 20.9713 2.87954 20.9713 6.43179Z"
+                          fill="#F0A029"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-14"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          54.96
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="10"
+                        viewBox="0 0 29 10"
+                        width="29"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M14.7771 3.18797C14.762 4.57733 15.9235 5.35133 16.7987 5.81318C17.6979 6.28578 17.9996 6.5891 17.9962 7.01173C17.9894 7.65913 17.2786 7.94439 16.614 7.95551C15.4534 7.97511 14.7796 7.61668 14.2427 7.34624L13.8247 9.45988C14.3637 9.72733 15.3597 9.96058 16.3923 9.9723C18.8181 9.9723 20.4043 8.67787 20.412 6.67207C20.4222 4.12684 17.1548 3.98636 17.1772 2.84902C17.1846 2.50327 17.4892 2.13551 18.1565 2.04106C18.4871 1.99479 19.3995 1.95869 20.4328 2.47278L20.8385 0.427536C20.2826 0.209585 19.5682 0 18.6783 0C16.3964 0 14.79 1.31105 14.7771 3.18797ZM24.7395 0.176346C24.296 0.176346 23.9223 0.454791 23.7566 0.883759L20.2919 9.82142H22.716L23.1977 8.38041H26.1596L26.4386 9.82142H28.574L26.71 0.176346H24.7395ZM25.0777 2.78243L25.7772 6.40391H23.8622L25.0777 2.78243ZM11.8397 0.176346L9.92964 9.82142H12.2386L14.148 0.176346H11.8397ZM8.42354 0.176346L6.02029 6.74094L5.04824 1.15945C4.93439 0.536328 4.48377 0.176346 3.98336 0.176346H0.054434L0 0.455986C0.80632 0.645602 1.72283 0.951192 2.2779 1.27686C2.61777 1.47628 2.71458 1.65024 2.82632 2.12404L4.66732 9.82142H7.10774L10.8486 0.176346H8.42354Z"
+                          fill="url(#paint0_linear)"
+                          fill-rule="evenodd"
+                        />
+                        <defs>
+                          <lineargradient
+                            gradientUnits="userSpaceOnUse"
+                            id="paint0_linear"
+                            x1="28.574"
+                            x2="0"
+                            y1="0.259826"
+                            y2="0.259826"
+                          >
+                            <stop
+                              stop-color="#21489F"
+                            />
+                            <stop
+                              offset="1"
+                              stop-color="#261A5E"
+                            />
+                          </lineargradient>
+                        </defs>
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-15"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          13.27
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="10"
+                        viewBox="0 0 29 10"
+                        width="29"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M14.7771 3.18797C14.762 4.57733 15.9235 5.35133 16.7987 5.81318C17.6979 6.28578 17.9996 6.5891 17.9962 7.01173C17.9894 7.65913 17.2786 7.94439 16.614 7.95551C15.4534 7.97511 14.7796 7.61668 14.2427 7.34624L13.8247 9.45988C14.3637 9.72733 15.3597 9.96058 16.3923 9.9723C18.8181 9.9723 20.4043 8.67787 20.412 6.67207C20.4222 4.12684 17.1548 3.98636 17.1772 2.84902C17.1846 2.50327 17.4892 2.13551 18.1565 2.04106C18.4871 1.99479 19.3995 1.95869 20.4328 2.47278L20.8385 0.427536C20.2826 0.209585 19.5682 0 18.6783 0C16.3964 0 14.79 1.31105 14.7771 3.18797ZM24.7395 0.176346C24.296 0.176346 23.9223 0.454791 23.7566 0.883759L20.2919 9.82142H22.716L23.1977 8.38041H26.1596L26.4386 9.82142H28.574L26.71 0.176346H24.7395ZM25.0777 2.78243L25.7772 6.40391H23.8622L25.0777 2.78243ZM11.8397 0.176346L9.92964 9.82142H12.2386L14.148 0.176346H11.8397ZM8.42354 0.176346L6.02029 6.74094L5.04824 1.15945C4.93439 0.536328 4.48377 0.176346 3.98336 0.176346H0.054434L0 0.455986C0.80632 0.645602 1.72283 0.951192 2.2779 1.27686C2.61777 1.47628 2.71458 1.65024 2.82632 2.12404L4.66732 9.82142H7.10774L10.8486 0.176346H8.42354Z"
+                          fill="url(#paint0_linear)"
+                          fill-rule="evenodd"
+                        />
+                        <defs>
+                          <lineargradient
+                            gradientUnits="userSpaceOnUse"
+                            id="paint0_linear"
+                            x1="28.574"
+                            x2="0"
+                            y1="0.259826"
+                            y2="0.259826"
+                          >
+                            <stop
+                              stop-color="#21489F"
+                            />
+                            <stop
+                              offset="1"
+                              stop-color="#261A5E"
+                            />
+                          </lineargradient>
+                        </defs>
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-16"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          50.29
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="10"
+                        viewBox="0 0 29 10"
+                        width="29"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M14.7771 3.18797C14.762 4.57733 15.9235 5.35133 16.7987 5.81318C17.6979 6.28578 17.9996 6.5891 17.9962 7.01173C17.9894 7.65913 17.2786 7.94439 16.614 7.95551C15.4534 7.97511 14.7796 7.61668 14.2427 7.34624L13.8247 9.45988C14.3637 9.72733 15.3597 9.96058 16.3923 9.9723C18.8181 9.9723 20.4043 8.67787 20.412 6.67207C20.4222 4.12684 17.1548 3.98636 17.1772 2.84902C17.1846 2.50327 17.4892 2.13551 18.1565 2.04106C18.4871 1.99479 19.3995 1.95869 20.4328 2.47278L20.8385 0.427536C20.2826 0.209585 19.5682 0 18.6783 0C16.3964 0 14.79 1.31105 14.7771 3.18797ZM24.7395 0.176346C24.296 0.176346 23.9223 0.454791 23.7566 0.883759L20.2919 9.82142H22.716L23.1977 8.38041H26.1596L26.4386 9.82142H28.574L26.71 0.176346H24.7395ZM25.0777 2.78243L25.7772 6.40391H23.8622L25.0777 2.78243ZM11.8397 0.176346L9.92964 9.82142H12.2386L14.148 0.176346H11.8397ZM8.42354 0.176346L6.02029 6.74094L5.04824 1.15945C4.93439 0.536328 4.48377 0.176346 3.98336 0.176346H0.054434L0 0.455986C0.80632 0.645602 1.72283 0.951192 2.2779 1.27686C2.61777 1.47628 2.71458 1.65024 2.82632 2.12404L4.66732 9.82142H7.10774L10.8486 0.176346H8.42354Z"
+                          fill="url(#paint0_linear)"
+                          fill-rule="evenodd"
+                        />
+                        <defs>
+                          <lineargradient
+                            gradientUnits="userSpaceOnUse"
+                            id="paint0_linear"
+                            x1="28.574"
+                            x2="0"
+                            y1="0.259826"
+                            y2="0.259826"
+                          >
+                            <stop
+                              stop-color="#21489F"
+                            />
+                            <stop
+                              offset="1"
+                              stop-color="#261A5E"
+                            />
+                          </lineargradient>
+                        </defs>
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-17"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          28.95
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="13"
+                        viewBox="0 0 21 13"
+                        width="21"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M7.64941 11.4892H13.32V1.3754H7.64941V11.4892Z"
+                          fill="#F75B1B"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M8.01018 6.43222C8.01018 4.38046 8.97821 2.5532 10.4854 1.37531C9.38287 0.513856 7.99213 0 6.48032 0C2.90126 0 0 2.87996 0 6.43222C0 9.98447 2.90126 12.8644 6.48032 12.8644C7.99213 12.8644 9.38287 12.3506 10.4854 11.4891C8.97821 10.3113 8.01018 8.48397 8.01018 6.43222Z"
+                          fill="#E20025"
+                          fill-rule="evenodd"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M20.769 10.4177V10.1683H20.7032L20.6278 10.34L20.5524 10.1683H20.4866V10.4177H20.5327V10.2294L20.6035 10.3919H20.6517L20.7225 10.229V10.4177H20.769ZM20.353 10.4177V10.2106H20.4372V10.1686H20.2228V10.2106H20.3069V10.4177H20.353ZM20.9713 6.43179C20.9713 9.98447 18.07 12.864 14.491 12.864C12.9792 12.864 11.5884 12.3501 10.4863 11.4887C11.9935 10.3113 12.9612 8.48361 12.9612 6.43179C12.9612 4.38003 11.9935 2.55278 10.4863 1.37489C11.5884 0.513856 12.9792 0 14.491 0C18.07 0 20.9713 2.87954 20.9713 6.43179Z"
+                          fill="#F0A029"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-18"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          30.81
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="10"
+                        viewBox="0 0 29 10"
+                        width="29"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M14.7771 3.18797C14.762 4.57733 15.9235 5.35133 16.7987 5.81318C17.6979 6.28578 17.9996 6.5891 17.9962 7.01173C17.9894 7.65913 17.2786 7.94439 16.614 7.95551C15.4534 7.97511 14.7796 7.61668 14.2427 7.34624L13.8247 9.45988C14.3637 9.72733 15.3597 9.96058 16.3923 9.9723C18.8181 9.9723 20.4043 8.67787 20.412 6.67207C20.4222 4.12684 17.1548 3.98636 17.1772 2.84902C17.1846 2.50327 17.4892 2.13551 18.1565 2.04106C18.4871 1.99479 19.3995 1.95869 20.4328 2.47278L20.8385 0.427536C20.2826 0.209585 19.5682 0 18.6783 0C16.3964 0 14.79 1.31105 14.7771 3.18797ZM24.7395 0.176346C24.296 0.176346 23.9223 0.454791 23.7566 0.883759L20.2919 9.82142H22.716L23.1977 8.38041H26.1596L26.4386 9.82142H28.574L26.71 0.176346H24.7395ZM25.0777 2.78243L25.7772 6.40391H23.8622L25.0777 2.78243ZM11.8397 0.176346L9.92964 9.82142H12.2386L14.148 0.176346H11.8397ZM8.42354 0.176346L6.02029 6.74094L5.04824 1.15945C4.93439 0.536328 4.48377 0.176346 3.98336 0.176346H0.054434L0 0.455986C0.80632 0.645602 1.72283 0.951192 2.2779 1.27686C2.61777 1.47628 2.71458 1.65024 2.82632 2.12404L4.66732 9.82142H7.10774L10.8486 0.176346H8.42354Z"
+                          fill="url(#paint0_linear)"
+                          fill-rule="evenodd"
+                        />
+                        <defs>
+                          <lineargradient
+                            gradientUnits="userSpaceOnUse"
+                            id="paint0_linear"
+                            x1="28.574"
+                            x2="0"
+                            y1="0.259826"
+                            y2="0.259826"
+                          >
+                            <stop
+                              stop-color="#21489F"
+                            />
+                            <stop
+                              offset="1"
+                              stop-color="#261A5E"
+                            />
+                          </lineargradient>
+                        </defs>
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                  <tr
+                    data-testid="table-row-19"
+                    role="row"
+                  >
+                    <td
+                      role="cell"
+                    >
+                      <div>
+                        GBP 
+                        <strong>
+                          41.13
+                        </strong>
+                      </div>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Google Street 4
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      <svg
+                        fill="none"
+                        height="10"
+                        viewBox="0 0 29 10"
+                        width="29"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M14.7771 3.18797C14.762 4.57733 15.9235 5.35133 16.7987 5.81318C17.6979 6.28578 17.9996 6.5891 17.9962 7.01173C17.9894 7.65913 17.2786 7.94439 16.614 7.95551C15.4534 7.97511 14.7796 7.61668 14.2427 7.34624L13.8247 9.45988C14.3637 9.72733 15.3597 9.96058 16.3923 9.9723C18.8181 9.9723 20.4043 8.67787 20.412 6.67207C20.4222 4.12684 17.1548 3.98636 17.1772 2.84902C17.1846 2.50327 17.4892 2.13551 18.1565 2.04106C18.4871 1.99479 19.3995 1.95869 20.4328 2.47278L20.8385 0.427536C20.2826 0.209585 19.5682 0 18.6783 0C16.3964 0 14.79 1.31105 14.7771 3.18797ZM24.7395 0.176346C24.296 0.176346 23.9223 0.454791 23.7566 0.883759L20.2919 9.82142H22.716L23.1977 8.38041H26.1596L26.4386 9.82142H28.574L26.71 0.176346H24.7395ZM25.0777 2.78243L25.7772 6.40391H23.8622L25.0777 2.78243ZM11.8397 0.176346L9.92964 9.82142H12.2386L14.148 0.176346H11.8397ZM8.42354 0.176346L6.02029 6.74094L5.04824 1.15945C4.93439 0.536328 4.48377 0.176346 3.98336 0.176346H0.054434L0 0.455986C0.80632 0.645602 1.72283 0.951192 2.2779 1.27686C2.61777 1.47628 2.71458 1.65024 2.82632 2.12404L4.66732 9.82142H7.10774L10.8486 0.176346H8.42354Z"
+                          fill="url(#paint0_linear)"
+                          fill-rule="evenodd"
+                        />
+                        <defs>
+                          <lineargradient
+                            gradientUnits="userSpaceOnUse"
+                            id="paint0_linear"
+                            x1="28.574"
+                            x2="0"
+                            y1="0.259826"
+                            y2="0.259826"
+                          >
+                            <stop
+                              stop-color="#21489F"
+                            />
+                            <stop
+                              offset="1"
+                              stop-color="#261A5E"
+                            />
+                          </lineargradient>
+                        </defs>
+                      </svg>
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      4009
+                    </td>
+                    <td
+                      role="cell"
+                    >
+                      Sep 27, 2017 1:00 AM
+                    </td>
+                    <td
+                      role="cell"
+                    />
+                  </tr>
+                </tbody>
+              </table>
+              <div
+                class="css-a0z5ei"
+              >
+                Showing 20 of 1159
               </div>
             </div>
           </div>
+        </div>
+        <div
+          class="css-1viymee"
+        >
           <div
-            class="css-1viymee"
+            class=""
           >
             <div
-              class=""
+              class="ant-drawer ant-drawer-right"
+              data-testid="transaction-preview"
+              style="position: absolute;"
+              tabindex="-1"
             >
               <div
-                class="ant-drawer ant-drawer-right"
-                style="position: absolute;"
-                tabindex="-1"
+                class="ant-drawer-mask"
+              />
+              <div
+                class="ant-drawer-content-wrapper"
+                style="transform: translateX(100%); width: 570px;"
               >
                 <div
-                  class="ant-drawer-mask"
-                />
-                <div
-                  class="ant-drawer-content-wrapper"
-                  style="transform: translateX(100%); width: 570px;"
+                  class="ant-drawer-content"
                 >
                   <div
-                    class="ant-drawer-content"
+                    class="ant-drawer-wrapper-body"
                   >
                     <div
-                      class="ant-drawer-wrapper-body"
+                      class="ant-drawer-header"
                     >
                       <div
-                        class="ant-drawer-header"
+                        class="ant-drawer-title"
+                      >
+                        Transaction details
+                      </div>
+                      <button
+                        aria-label="Close"
+                        class="ant-drawer-close"
+                        style="--scroll-bar: 0px;"
+                        type="button"
+                      >
+                        <span
+                          aria-label="close"
+                          class="anticon anticon-close"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="close"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-drawer-body"
+                    >
+                      <div
+                        class="css-ppcisl"
                       >
                         <div
-                          class="ant-drawer-title"
-                        >
-                          Transaction details
-                        </div>
-                        <button
-                          aria-label="Close"
-                          class="ant-drawer-close"
-                          style="--scroll-bar: 0px;"
-                          type="button"
+                          class="ant-spin ant-spin-spinning"
                         >
                           <span
-                            aria-label="close"
-                            class="anticon anticon-close"
-                            role="img"
+                            class="ant-spin-dot ant-spin-dot-spin"
                           >
-                            <svg
-                              aria-hidden="true"
-                              data-icon="close"
-                              fill="currentColor"
-                              focusable="false"
-                              height="1em"
-                              viewBox="64 64 896 896"
-                              width="1em"
-                            >
-                              <path
-                                d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
-                              />
-                            </svg>
+                            <i
+                              class="ant-spin-dot-item"
+                            />
+                            <i
+                              class="ant-spin-dot-item"
+                            />
+                            <i
+                              class="ant-spin-dot-item"
+                            />
+                            <i
+                              class="ant-spin-dot-item"
+                            />
                           </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-drawer-body"
-                      >
-                        <div
-                          class="css-ppcisl"
-                        >
-                          <div
-                            class="ant-spin ant-spin-spinning"
-                          >
-                            <span
-                              class="ant-spin-dot ant-spin-dot-spin"
-                            >
-                              <i
-                                class="ant-spin-dot-item"
-                              />
-                              <i
-                                class="ant-spin-dot-item"
-                              />
-                              <i
-                                class="ant-spin-dot-item"
-                              />
-                              <i
-                                class="ant-spin-dot-item"
-                              />
-                            </span>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -292,11 +1584,26 @@ exports[`App Render app 1`] = `
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
     <footer
-      class="footer"
-    />
+      class="css-1p7n9rk"
+    >
+      <svg
+        fill="none"
+        height="9"
+        viewBox="0 0 33 9"
+        width="33"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M30.8207 6.94239V0.030643H28.3676V8.99869H32.9961V6.94239H30.8207ZM21.0743 8.99869H26.1863V6.94239H23.5275V5.45441H26.1863V3.48937H23.5275V1.99806H26.1863V0.030643H21.0743V8.99869ZM16.1946 6.29593C15.8158 6.72593 15.2713 6.94254 14.5729 6.94254H14.3762V2.05691H14.5729C16.0013 2.05691 16.7561 2.90528 16.7561 4.50721C16.7561 5.27146 16.5686 5.87174 16.1946 6.29593ZM17.8205 1.10752C17.3934 0.743456 16.8859 0.466724 16.3097 0.282316C15.7287 0.09565 15.1039 0 14.4551 0H12.1124V8.9968H14.4551C15.2655 8.9968 15.9774 8.87679 16.5762 8.6382C17.1684 8.40294 17.6669 8.07571 18.0534 7.66649C18.44 7.25621 18.7313 6.77095 18.9224 6.2201C19.1122 5.66343 19.2105 5.06184 19.2105 4.43139C19.2105 3.69043 19.083 3.03454 18.833 2.48238C18.5845 1.93165 18.2422 1.46944 17.8205 1.10752ZM7.39797 8.99869H9.8805V0.030643H7.39797V8.99869ZM0.280029 9.00063H2.73342V5.45636H4.41611L5.39235 3.49131H2.73342V2.00001H5.39235V0.032586H0.280029V9.00063Z"
+          fill="#6C788B"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </footer>
   </div>
 </DocumentFragment>
 `;
